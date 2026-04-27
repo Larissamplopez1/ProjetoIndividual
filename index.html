@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- header com home login e cadastro -->
+    <!-- header home, dicas, curiosidades, login e cadastro -->
     <header class="header">
     <div class="logo">
         <h1>Barcelona</h1>
@@ -23,7 +23,7 @@
         <a href="./cadastro.html">Cadastro</a>
     </nav>
 </header>
-<!-- Banner com escurecimento -->
+<!-- Banner com escurecimento  -->
 <section class="banner">
     <div class="banner-overlay"></div>
 
@@ -35,56 +35,116 @@
             Descubra lugares, experiências e dicas reais.
         </p>
 
-        <a href="./dicas.html" class="btn-dicas">Descobrir Barcelona →</a>
     </div>
 </section>
 <!-- Sessão de card abaixo do banner para outras telas -->
 <section class="cards">
-    <div class="card azul">
-        <h3 >Sobre nós</h3>
-        <p>Conheça a história por trás desse projeto.</p>
-        <a href="./sobre.html">→</a>
+
+    <div class="card">
+        <div class="card-inner">
+
+            <div class="card-front sobre">
+                <h3>Sobre nós</h3>
+            </div>
+
+            <div class="card-back">
+                <a href="./sobre.html">Conheça a história por trás desse projeto</a>
+            </div>
+
+        </div>
     </div>
 
-    <div class="card vermelho">
-        <h3>Curiosidades</h3>
-        <p>Fatos interessantes sobre Barcelona.</p>
-        <a href="./curiosidades.html">→</a>
+    <div class="card">
+        <div class="card-inner">
+
+            <div class="card-front curiosidades">
+                <h3>Curiosidades</h3>
+            </div>
+
+            <div class="card-back">
+                <a href="./curiosidades.html">Fatos interessantes sobre Barcelona</a>
+            </div>
+
+        </div>
     </div>
 
-    <div class="card roxo">
-        <h3>Dicas</h3>
-        <p>Informações úteis para sua viagem.</p>
-        <a href="./dicas.html">→</a>
+    <div class="card">
+        <div class="card-inner">
+
+            <div class="card-front dicas">
+                <h3>Dicas</h3>
+            </div>
+
+            <div class="card-back">
+                <a href="./dicas.html">Informações úteis para sua viagem</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+
+            <div class="card-front galeria">
+                <h3>Galeria</h3>
+            </div>
+
+            <div class="card-back">
+                <a href="./galeria.html">Veja a galeria de fotos</a>
+            </div>
+
+        </div>
     </div>
 
-    <div class="card laranja">
-        <h3>Dashboard</h3>
-        <p>Dados e informações da cidade.</p>
-        <a href="./login.html">→</a>
+</section>
+
+<!-- Sobre Barcelona -->
+
+<section class="barcelona">
+
+    <div class="barcelona-box">
+
+        <h2>Barcelona vai além da arquitetura</h2>
+
+        <p class="destaque">
+        Barcelona é um dos destinos mais procurados do mundo — e não é por acaso.
+        A cidade encanta com sua arquitetura única, marcada pelas obras de Antoni Gaudí e por ícones como a Sagrada Família. Em poucos passos, você sai de cenários históricos e se encontra em frente ao mar,
+            com pessoas aproveitando o sol, praticando esportes e vivendo a cidade ao ar livre.
+            Caminhando mais um pouco, surgem ruas antigas, cheias de história, com comércios e
+            restaurantes familiares que atravessam gerações — lugares onde cada detalhe carrega
+            cuidado, tradição e identidade. Barcelona é versátil, viva e surpreendente.
+            Uma cidade que mistura passado e presente de forma natural — e que faz cada pessoa
+            viver uma experiência diferente.
+        </p>
     </div>
+
+</section>
+
+<!-- Chama para Quiz e Dashboard -->
+
+<section class="quiz">
+
+    <div class="quiz-box">
+
+        <h2>Descubra que tipo de turista você é</h2>
+        <img src="./assets/imgs/quiz.png" alt="Tipos de viajantes">
+
+        <a href="./quiz.html" class="quiz-button">Fazer quiz</a>
+
+    </div>
+
 </section>
 
 <footer class="footer">
-
-    <div class="footer-conteudo">
-        <div class="footer-left">
-            <h2>Barcelona</h2>
-            <p>Um destino que vai além do que você imagina.</p>
+    <div class="footer-center">
+            <a class="icone" href="https://github.com/Larissamplopez1"><img class="icone" src="./assets/imgs/icone-github.png"></a>
+            <a class="icone" href="https://github.com/Larissamplopez1"><img class="icone" src="./assets/imgs/icone-email.png"></a>
+            <a class="icone" href="https://github.com/Larissamplopez1"><img class="icone" src="./assets/imgs/icone-linkedin.png"></a>
         </div>
-
-        <div class="footer-right">
-            <p>Barcelona não é só um lugar.</p>
-            <span>É um sentimento que fica.</span>
-        </div>
-    </div>
 
     <div class="footer-bottom">
         <p>© 2026 • Projeto Barcelona • SPTech</p>
     </div>
 
-</footer>
-
-     
+</footer>  
 </body>
 </html>

@@ -1,0 +1,561 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* header fixo em todas as páginas */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #0b1c2c;
+    color: white;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.logo span {
+    font-size: 12px;
+    color: #f5c518;
+}
+
+.menu a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+/* FOOTER */
+
+.footer {
+    align-items: center;
+    background-color: #0b1c2c;
+    color: white;
+    padding: 8px 30px 6px;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+
+.footer-center {
+    display: flex;
+    gap: 10px;
+    justify-self: center;
+}
+
+.footer-bottom {
+    font-size: 12px;
+    margin-top: 5px;
+    justify-self: center;
+}
+
+.icone {
+    display: flex;
+    align-items: center;  
+    gap: 8px;             
+}
+
+.icone img{
+    width: 50px; 
+    height: 50px;
+}
+
+
+/* banner home */
+
+.banner {
+    position: relative;
+    height: 90vh;
+    background-image: url('./assets/imgs/banner-barcelona.png'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+    color: white;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* escurece imagem */
+}
+
+.banner-content {
+    position: relative;
+    max-width: 500px;
+}
+
+.banner-content h1 {
+    font-size: 60px;
+    margin: 0;
+}
+
+.banner-content h2 {
+    font-size: 40px;
+    color: #f5c518;
+    margin: 10px 0;
+}
+
+.banner-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.icone {
+    width: 100px;
+    height: 100px;
+}
+
+
+/* Cards abaixo do banner para páginas */
+.cards {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0px;
+    align-items: center;
+    gap: 80px;             
+}        
+
+/* container */
+.card {
+    width: 220px;
+    height: 220px;
+    display: flex;
+}
+
+/* parte que gira */
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* efeito ao passar o mouse */
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* frente e verso */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+}
+
+/* frente */
+.card-front {
+    background-size: cover;
+    background-position: center;
+}
+
+/* verso */
+.card-back {
+    background-color: #0b1c2c;
+    transform: rotateY(180deg);
+    text-align: center;
+}
+
+/* link para página indicada*/
+.card-back a {
+    margin-top: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+} 
+
+.sobre {
+    background-image: url('./assets/imgs/cena.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.curiosidades {
+    background-image: url('./assets/imgs/montserrat.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.dicas {
+    background-image: url('./assets/imgs/arquitetura.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.galeria {
+    background-image: url('./assets/imgs/arquitetura2.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+/* Sobre Barcelona */
+
+.barcelona {
+    background-color: #f5f5f5;
+    padding: 60px 20px; 
+}
+
+.barcelona-box {
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;    
+    text-align: left;
+}
+
+
+.barcelona h2 {
+    font-size: 28px;
+    color: #0b1c2c;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.barcelona .destaque {
+    font-size: 17px;
+    color: #0b1c2c;
+    font-weight: 500;
+}
+
+
+/* Chamada para Quiz e Dash na página home */
+
+.quiz {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center; 
+}
+
+.quiz-box {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.quiz h2 {
+    font-size: 24px;
+    color: #0b1c2c;
+}
+
+
+.quiz img {
+    width: 900px;
+    height: auto;
+    justify-self: center;
+    display: block;
+    border-radius: 12px;
+    margin-top: -20px;
+}
+
+
+.quiz-button {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #f5c518;
+    color: #0b1c2c;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.quiz-button:hover {
+    background-color: #ffd84d;
+    transform: translateY(-2px);
+}
+
+
+/* página sobre Nós */
+
+.banner-sobre {
+    position: relative;
+    height: 60vh;
+    background-image: url('./assets/imgs/banner-barcelona.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+    color: white;
+}
+.sobre-container {
+    padding: 40px 80px;
+    background-color: #f5f5f5;
+}
+
+.sobre-bloco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    gap: 20px;
+}
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.texto {
+    width: 45%;  
+}
+
+.texto h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.texto p {
+    font-size: 15px;    
+    line-height: 1.6;   
+}
+
+.imagem .imagem1 {
+    width: 100%;
+    height: 400px;
+    object-fit: contain; /* não corta a imagem */
+ 
+}
+
+.imagem {
+    width: 40%;     
+}
+
+.imagem .imagem2 {
+    width: 100%;
+    max-height: 400px;  
+    object-fit: cover;   /* mantém proporção bonita nao deixa distorcer */
+    border-radius: 15px;
+}
+
+
+/* Página de Dicas */
+
+.banner-dicas {
+    position: relative;
+    height: 60vh;
+    background-image: url('./assets/imgs/banner-barcelona.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+    color: white;
+}
+
+.dicas-container {
+    padding: 60px 80px;
+    background-color: #f5f5f5;
+}
+
+.dica {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.dica img {
+    width: 290px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.dica-texto h3 {
+    margin: 0 0 10px;
+}
+
+.dica-texto p {
+    margin: 0;
+    color: #555;
+}
+
+/* Página Curiosidades */
+
+.banner-curiosidades {
+    position: relative;
+    height: 60vh;
+    background-image: url('./assets/imgs/banner-barcelona.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+    color: white;
+}
+
+.curiosidades-container {
+    padding: 60px 80px;
+    background-color: #f5f5f5;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.curiosidade {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.curiosidade:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.curiosidade h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.curiosidade p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Páginas de Login e Cadastro */
+
+.form-container {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./assets/imgs/banner-barcelona.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.form-box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.form-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: #f5c518;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-box p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.form-box a {
+    color: #2c5aa0;
+    text-decoration: none;
+}
+
+
+/* Página de Dashboard */
+
+/* KPIs */
+.kpis {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 60px;
+    padding: 0 80px;
+}
+
+.kpi {
+    width: 220px;
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+}
+
+.kpi span {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* CORES */
+.azul { background-color: #3aa6b9; }
+.vermelho { background-color: #e35d5b; }
+.roxo { background-color: #7e57c2; }
+.laranja { background-color: #f5a623; }
+
+/* GRÁFICOS */
+.graficos {
+    display: flex;
+    gap: 30px;
+    padding: 50px 80px;
+}
+
+.grafico {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+canvas {
+    margin-top: 20px;
+}
+
+
+/* Página de Galeria de fotos */
+
+.galeria-fotos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.galeria-fotos img {
+  width: 300px;
+  height: auto;
+  border-radius: 15px; 
+ 
+}

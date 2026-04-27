@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcelona</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>Barcelona</h1>
+        </div>
+
+        <nav class="menu">
+        <a href="./index.html">Home</a>
+        <a href="./dicas.html">Dicas</a>
+        <a href="./curiosidades.html">Curiosidades</a>
+        <a>|</a>
+        <a href="./login.html">Login</a>
+        <a href="./cadastro.html">Cadastro</a>
+        </nav>
+    </header>
+    <section class="form-container">
+        <div class="form-box">
+            <h2>Cadastro</h2>
+
+            <input type="text" placeholder="Nome" id="input_nome_cadastro">
+            <input type="text" placeholder="Sobrenome" id="input_sobrenome_cadastro">
+            <input type="email" placeholder="Email" id="input_email_cadastro">
+            <input type="password" placeholder="Senha" id="input_senha_cadastro">
+            <input type="password" placeholder="Confirme sua senha" id="input_confirmacao_senha_cadastro">
+
+            <button type="button" onclick="cadastrar()">Cadastrar</button>
+
+            <div id="div_mensagem"></div>
+
+            <p>Já tem conta? <a href="./login.html">Entrar</a></p>
+        </div>
+    </section>
+
+</body>
+
+</html>
+<script>
+
+    function cadastrar() {
+
+        let nome = input_nome_cadastro.value;
+        let sobrenome = input_sobrenome_cadastro.value;
+        let email = input_email_cadastro.value;
+        let senha = input_senha_cadastro.value;
+        let confirmacaoSenha = input_confirmacao_senha_cadastro.value;
+        let senhaMinuscula = senha.toLowerCase();
+        let temNumero = false;
+        let temEspecial = false;
+        let especiais = ['!', '@', '#', '$', '%', '&', '*']
+
+    for (let i = 0; i < senha.length; i++) {
+        let posicao = senha[i];
+
+        if (posicao >= 0 && posicao <= 9){
+            temNumero = true;
+        }
+
+        if (especiais.includes(posicao)) {
+        temEspecial = true;
+        }
+    }
+
+    if (!temNumero || !temEspecial) {
+    div_mensagem.innerHTML =
+        `↪ Sua senha deve conter número e caractere especial`;
+    return;
+}
+
+
+        if (nome == "" || sobrenome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
+            div_mensagem.innerHTML = `⚠️ Preencha todos os campos`
+            return
+        }
+
+        if (nome.length <= 1) {
+            div_mensagem.innerHTML =
+                `↪ Seu nome deve ter mais que uma letra`
+                return
+        }
+
+        if (!email.includes("@") || !email.includes(".com")) {
+            div_mensagem.innerHTML =
+                `↪ Deve incluir um e-mail válido`
+                return
+        }
+
+        if (senha.length < 8) {
+            div_mensagem.innerHTML =
+                `↪ Sua senha deve ter no mínimo 8 caracteres`
+                return
+        }
+
+        if (senha != confirmacaoSenha) {
+            div_mensagem.innerHTML =
+                `↪ Sua senha de confirmação está diferente da senha`
+                return
+        }
+
+        if (senha == senhaMinuscula) {
+            div_mensagem.innerHTML =
+                `↪ Sua senha deve conter um caractere maiúsculo`
+                return
+        }
+
+        if (senha == confirmacaoSenha && senha.length >= 8 && email.includes("@") && email.includes(".com") && nome.length > 1 && 
+    nome != "" && sobrenome != "" && email != "" && senha != "" && confirmacaoSenha != "" && senha != senhaMinuscula) {
+            div_mensagem.innerHTML =
+                `Cadastro realizado com sucesso ✅`
+                return
+        }
+
+    }
+
+
+</script>

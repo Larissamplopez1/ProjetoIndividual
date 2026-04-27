@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Quiz</title>
+</head>
+<body>
+
+<!-- PERGUNTA 1 -->
+<div id="p1">
+  <h3>Pergunta 1</h3>
+  <input type="radio" name="p1" value="A"> A<br>
+  <input type="radio" name="p1" value="B"> B<br>
+  <input type="radio" name="p1" value="C"> C<br>
+  <input type="radio" name="p1" value="D"> D<br><br>
+
+  <button onclick="irProxima('p1','p2','p1')">Próxima</button>
+</div>
+
+<!-- PERGUNTA 2 -->
+<div id="p2" style="display:none;">
+  <h3>Pergunta 2</h3>
+  <input type="radio" name="p2" value="A"> A<br>
+  <input type="radio" name="p2" value="B"> B<br>
+  <input type="radio" name="p2" value="C"> C<br>
+  <input type="radio" name="p2" value="D"> D<br><br>
+
+  <button onclick="irProxima('p2','p3','p2')">Próxima</button>
+</div>
+
+<!-- PERGUNTA 3 -->
+<div id="p3" style="display:none;">
+  <h3>Pergunta 3</h3>
+  <input type="radio" name="p3" value="A"> A<br>
+  <input type="radio" name="p3" value="B"> B<br>
+  <input type="radio" name="p3" value="C"> C<br>
+  <input type="radio" name="p3" value="D"> D<br><br>
+
+  <button onclick="verificarFinal()">Finalizar</button>
+</div>
+
+<h2 id="resposta"></h2>
+
+<script>
+function irProxima(atual, proxima, nomePergunta) {
+
+  let resposta = document.querySelector('input[name="'+nomePergunta+'"]:checked');
+
+  if (!resposta) {
+    alert("Escolha uma opção antes de continuar!");
+    return;
+  }
+
+  document.getElementById(atual).style.display = "none";
+  document.getElementById(proxima).style.display = "block";
+}
+
+function verificarFinal() {
+
+  let p1 = document.querySelector('input[name="p1"]:checked');
+  let p2 = document.querySelector('input[name="p2"]:checked');
+  let p3 = document.querySelector('input[name="p3"]:checked');
+
+  if (!p3) {
+    alert("Escolha uma opção!");
+    return;
+  }
+
+  let A = 0, B = 0, C = 0, D = 0;
+
+  if (p1.value == "A") A++;
+  if (p1.value == "B") B++;
+  if (p1.value == "C") C++;
+  if (p1.value == "D") D++;
+
+  if (p2.value == "A") A++;
+  if (p2.value == "B") B++;
+  if (p2.value == "C") C++;
+  if (p2.value == "D") D++;
+
+  if (p3.value == "A") A++;
+  if (p3.value == "B") B++;
+  if (p3.value == "C") C++;
+  if (p3.value == "D") D++;
+
+  let final = "A";
+
+  if (B > A && B > C && B > D) final = "B";
+  if (C > A && C > B && C > D) final = "C";
+  if (D > A && D > B && D > C) final = "D";
+
+  document.getElementById("resposta").innerText = "Resultado: " + final;
+}
+</script>
+
+</body>
+</html>

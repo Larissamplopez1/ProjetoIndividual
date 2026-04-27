@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcelona</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+    <div class="logo">
+        <h1>Barcelona</h1>
+    </div>
+
+    <nav class="menu">
+        <a href="./index.html">Home</a>
+        <a href="./dicas.html">Dicas</a>
+        <a href="./curiosidades.html">Curiosidades</a>
+        <a>|</a>
+        <a href="./login.html">Login</a>
+        <a href="./cadastro.html">Cadastro</a>
+    </nav>
+</header>
+
+<section class="form-container">
+    <div class="form-box">
+        <h2>Login</h2>
+
+        <input type="email" placeholder="Email" id="input_email_login">
+        <input type="password" placeholder="Senha" id="input_senha_login">
+        
+
+        <button type="button" onclick="entrar()">Entrar</button>
+        <div id="div_mensagem"></div>
+
+        <p>Não tem conta? <a href="./cadastro.html">Cadastre-se</a></p>
+    </div>
+</section>
+     
+</body>
+</html>
+<script>
+
+    function entrar(){
+
+        let emailLogin = input_email_login.value
+        let senhaLogin = input_senha_login
+
+        if (!emailLogin.includes("@") || !emailLogin.includes(".com")) {
+            div_mensagem.innerHTML = `⊗ Deve incluir um e-mail válido`
+        } else {
+            div_mensagem.innerHTML = `<br>Entrando...`
+        }
+
+
+    }
+</script>
