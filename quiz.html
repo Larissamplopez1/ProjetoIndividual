@@ -1,304 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo - Quiz</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Quiz</title>
+<link rel="stylesheet" href="stylequiz.css">
 </head>
+<body>
+<h1 id="tituloQuiz">Descubra qual turista você é</h1>
+<!-- PERGUNTA 1 -->
+<div id="p1">
+  <h3>Ao chegar em uma cidade nova, o que mais chama sua atenção?</h3>
+  <input type="radio" name="p1" value="A"> A arquitetura e os pontos históricos<br>
+  <input type="radio" name="p1" value="B"> Os restaurantes e comidas locais<br>
+  <input type="radio" name="p1" value="C"> O movimento das ruas e o clima do lugar<br>
+  <input type="radio" name="p1" value="D"> As possibilidades de experiências diferentes<br><br>
 
+  <button onclick="irProxima('p1','p2','p1')">Próxima</button>
+</div>
 
-<body onload="onloadEsconder()">
-    <header class="header">
-    <div class="logo">
-        <h1>Barcelona</h1>
-        <span>Além do que você imagina</span>
-    </div>
+<!-- PERGUNTA 2 -->
+<div id="p2" style="display:none;">
+  <h3>Qual dessas situações parece mais interessante?</h3>
+  <input type="radio" name="p2" value="A"> Descobrir a história por trás de um lugar<br>
+  <input type="radio" name="p2" value="B"> Experimentar algo típico da culinária local<br>
+  <input type="radio" name="p2" value="C"> Entrar em um lugar que chamou atenção no caminho<br>
+  <input type="radio" name="p2" value="D"> Fazer algo que você nunca fez antes<br><br>
 
-    <nav class="menu">
-        <a href="./index.html">Home</a>
-        <a href="./dicas.html">Dicas</a>
-        <a href="./curiosidades.html">Curiosidades</a>
-        <a>|</a>
-        <a href="./login.html">Login</a>
-        <a href="./cadastro.html">Cadastro</a>
-    </nav>
-</header>
-    <div id="pontuacaoEJogo">
-        <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
+  <button onclick="irProxima('p2','p3','p2')">Próxima</button>
+</div>
 
-        <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
-            <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
-                <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
-                <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
-            </div>
-            <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
-                <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
-                    <span id="spanPontuacaoFinal">***</span>
-                </span>
-                <span id="msgFinal" class="width-fit-content">***</span>
-            </div>
-        </div>
+<!-- PERGUNTA 3 -->
+<div id="p3" style="display:none;">
+  <h3>Como você costuma organizar seu dia em viagem?</h3>
+  <input type="radio" name="p3" value="A"> Planejo os principais pontos que quero visitar<br>
+  <input type="radio" name="p3" value="B"> Escolho onde vou comer e o resto se encaixa<br>
+  <input type="radio" name="p3" value="C"> Tenho uma ideia geral, mas deixo espaço para decidir na hora<br>
+  <input type="radio" name="p3" value="D"> Procuro atividades diferentes para fazer ao longo do dia<br><br>
 
-        <div id="jogo" class="width-fit-content flex-colunar border-secondary">
+  <button onclick="irProxima('p3','p4','p3')">Próxima</button>
+</div>
 
-            <div id="infoQuestao" class="padding-8">
-                <span>Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span id="qtdQuestoes"></span>
-                    questões.</span>
-            </div>
+<!-- PERGUNTA 4 -->
+<div id="p4" style="display:none;">
+  <h3>O que mais te agrada em um passeio?</h3>
+  <input type="radio" name="p4" value="A"> Aprender algo novo sobre o lugar<br>
+  <input type="radio" name="p4" value="B"> Aproveitar a comida e o ambiente<br>
+  <input type="radio" name="p4" value="C"> A sensação de descobrir algo inesperado<br>
+  <input type="radio" name="p4" value="D"> A emoção de fazer algo fora do comum<br><br>
 
-            <div id="perguntaDaQuestaoAtual" class="padding-8">
-                <span id="spanQuestaoExibida" class="text-bold"></span>
-            </div>
+  <button onclick="irProxima('p4','p5','p4')">Próxima</button>
+</div>
 
-            <div id="infoAlternativas" class="padding-8">
-                <span><em>Escolha uma opção dentre as abaixo:</em></span>
-            </div>
+<!-- PERGUNTA 5 -->
+<div id="p5" style="display:none;">
+  <h3>Qual dessas experiências você escolheria?</h3>
+  <input type="radio" name="p5" value="A"> Visitar um museu famoso<br>
+  <input type="radio" name="p5" value="B"> Ir a um mercado gastronômico<br>
+  <input type="radio" name="p5" value="C"> Explorar um bairro sem muita expectativa<br>
+  <input type="radio" name="p5" value="D"> Fazer um passeio diferente pela cidade<br><br>
 
-            <div id="opcoes" class="flex-colunar padding-8">
-                <span>
-                    <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
-                    <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
-                </span>
-                <span>
-                    <input type="radio" id="segundaOpcao" name="option" class="radio" value="alternativaB" />
-                    <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
-                </span>
-                <span>
-                    <input type="radio" id="terceiraOpcao" name="option" class="radio" value="alternativaC" />
-                    <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
-                </span>
-                <span>
-                    <input type="radio" id="quartaOpcao" name="option" class="radio" value="alternativaD" />
-                    <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
-                </span>
-            </div>
+  <button onclick="irProxima('p5','p6','p5')">Próxima</button>
+</div>
 
-            <div id="botoes" class="flex-colunar padding-8">
-                <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
-                <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
-                <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
-                <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
-            </div>
+<!-- PERGUNTA 6 -->
+<div id="p6" style="display:none;">
+  <h3>O que mais combina com você durante uma viagem?</h3>
+  <input type="radio" name="p6" value="A"> Entender a cultura local<br>
+  <input type="radio" name="p6" value="B"> Aproveitar a culinária<br>
+  <input type="radio" name="p6" value="C"> Curtir o momento sem tanta preocupação<br>
+  <input type="radio" name="p6" value="D"> Buscar novas experiências<br><br>
 
-        </div>
-    </div>
-</body>
+  <button onclick="irProxima('p6','p7','p6')">Próxima</button>
+</div>
 
-</html>
+<!-- PERGUNTA 7 -->
+<div id="p7" style="display:none;">
+  <h3>Se você tivesse uma tarde livre, o que faria?</h3>
+  <input type="radio" name="p7" value="A"> Visitava um ponto turístico importante<br>
+  <input type="radio" name="p7" value="B"> Procurava um bom café ou restaurante<br>
+  <input type="radio" name="p7" value="C"> Andava pela cidade e decidia no caminho<br>
+  <input type="radio" name="p7" value="D"> Tentava fazer algo diferente do habitual<br><br>
+
+  <button onclick="irProxima('p7','p8','p7')">Próxima</button>
+</div>
+
+<!-- PERGUNTA 8 -->
+<div id="p8" style="display:none;">
+  <h3>O que torna uma viagem inesquecível para você?</h3>
+  <input type="radio" name="p8" value="A"> A história e os lugares visitados<br>
+  <input type="radio" name="p8" value="B"> As comidas que experimentei<br>
+  <input type="radio" name="p8" value="C"> Os momentos inesperados que aconteceram<br>
+  <input type="radio" name="p8" value="D"> As experiências únicas que vivi<br><br>
+
+  <button onclick="verificarFinal()">Finalizar</button>
+</div>
+
+<div id="resposta" style="display:none;">
+  <h2 id="tituloResultado"></h2>
+  <img id="imgResultado">
+  <p id="textoResultado"></p>
+</div>
+
 <script>
-    const listaDeQuestoes = [
+function irProxima(atual, proxima, nomePergunta) {
 
-        {
-            pergunta: "O que mais te atrai em uma viagem?",
-            alternativaA: "Conhecer a história e os monumentos",
-            alternativaB: "Experimentar comidas típicas",
-            alternativaC: "Explorar lugares novos",
-            alternativaD: "Curtir bares e festas",
-            alternativaCorreta: "alternativaD"
-        },
+  let resposta = document.querySelector('input[name="'+nomePergunta+'"]:checked');
 
-        {
-            pergunta: "Ao chegar em Barcelona, você faz o quê?",
-            alternativaA: "Vai direto para a Sagrada Família",
-            alternativaB: "Procura um lugar pra comer Tapas",
-            alternativaC: "Sai caminhando por La Rambla",
-            alternativaD: "Já se informa sobre os bares da cidade",
-            alternativaCorreta: "alternativaD"
-        },
+  if (!resposta) {
+    alert("Escolha uma opção antes de continuar!");
+    return;
+  }
 
-        {
-            pergunta: "Qual dessas atividades mais combina com você?",
-            alternativaA: "Visitar museus",
-            alternativaB: "Ir a restaurantes típicos",
-            alternativaC: "Fazer um passeio sem roteiro",
-            alternativaD: "Curtir a noite com música e pessoas",
-            alternativaCorreta: "alternativaD"
-        }
+  document.getElementById(atual).style.display = "none";
+  document.getElementById(proxima).style.display = "block";
+}
 
-    ]
+function verificarFinal() {
 
-    // variáveis globais    
-    let numeroDaQuestaoAtual = 0
-    let pontuacaoFinal = 0
-    let tentativaIncorreta = 0
-    let certas = 0
-    let erradas = 0
-    let quantidadeDeQuestoes = listaDeQuestoes.length
-    // let isUltima = numeroDaQuestaoAtual == quantidadeDeQuestoes-1 ? true : false
+  let A = 0, B = 0, C = 0, D = 0;
 
-    function onloadEsconder() {
-        document.getElementById('pontuacao').style.display = "none"
-        document.getElementById('jogo').style.display = "none"
+  for (let i = 1; i <= 8; i++) {
+    let resp = document.querySelector('input[name="p'+i+'"]:checked');
+
+    if (!resp) {
+      alert("Responda todas as perguntas!");
+      return;
     }
 
-    function iniciarQuiz() {
-        document.getElementById('pontuacao').style.display = "flex"
-        document.getElementById('jogo').style.display = "flex"
-        document.getElementById('btnIniciarQuiz').style.display = "none"
+    if (resp.value == "A") A++;
+    if (resp.value == "B") B++;
+    if (resp.value == "C") C++;
+    if (resp.value == "D") D++;
+  }
 
-        document.getElementById('qtdQuestoes').innerHTML = quantidadeDeQuestoes
+let titulo = "";
+let texto = "";
+let imagem = "";
 
-        preencherHTMLcomQuestaoAtual(0)
+if (B > A && B > C && B > D) {
+  titulo = "Turista Gastronômico";
+  imagem = "./assets/imgs/gastronomico.png";
+  texto = "Para você, viajar é uma experiência de sabores. Descobrir novos restaurantes e pratos faz parte da sua jornada.";
+}
 
-        btnSubmeter.disabled = false
-        btnProx.disabled = true
-        // btnConcluir.disabled = true
-        btnTentarNovamente.disabled = true
-    }
+else if (C > A && C > B && C > D) {
+  titulo = "Turista Espontâneo";
+  imagem = "./assets/imgs/espontaneo.png";
+  texto = "Você prefere viver o momento e deixar a viagem acontecer naturalmente, explorando sem roteiro fixo.";
+}
 
-    function preencherHTMLcomQuestaoAtual(index) {
-        habilitarAlternativas(true)
-        const questaoAtual = listaDeQuestoes[index]
-        numeroDaQuestaoAtual = index
-        console.log("questaoAtual")
-        console.log(questaoAtual)
-        document.getElementById("spanNumeroDaQuestaoAtual").innerHTML = Number(index) + 1 // ajustando porque o index começa em 0
-        document.getElementById("spanQuestaoExibida").innerHTML = questaoAtual.pergunta;
-        document.getElementById("labelOpcaoUm").innerHTML = questaoAtual.alternativaA;
-        document.getElementById("labelOpcaoDois").innerHTML = questaoAtual.alternativaB;
-        document.getElementById("labelOpcaoTres").innerHTML = questaoAtual.alternativaC;
-        document.getElementById("labelOpcaoQuatro").innerHTML = questaoAtual.alternativaD;
-    }
+else if (D > A && D > B && D > C) {
+  titulo = "Turista Aventureiro";
+  imagem = "./assets/imgs/aventureiro.png";
+  texto = "Você busca experiências diferentes e foge do comum, transformando cada dia em algo único .";
+}
 
-    function submeter() {
-        const options = document.getElementsByName("option"); // recupera alternativas no html
+else {
+  titulo = "Turista Cultural";
+  imagem = "./assets/imgs/cultural.png";
+  texto = "Você valoriza a história e a cultura local, buscando entender a essência de cada lugar.";
+}
 
-        let hasChecked = false
-        for (let i = 0; i < options.length; i++) {
-            if (options[i].checked) {
-                hasChecked = true
-                break
-            }
-        }
+// joga na tela
+document.getElementById("tituloResultado").innerText = titulo;
+document.getElementById("textoResultado").innerText = texto;
+document.getElementById("imgResultado").src = imagem;
+// esconde a ultima pergunta
+document.getElementById("p8").style.display = "none";
 
-        if (!hasChecked) {
-            alert("Não há alternativas escolhidas. Escolha uma opção.")
-        } else {
-            btnSubmeter.disabled = true
-            btnProx.disabled = false
-
-            habilitarAlternativas(false)
-
-            checarResposta()
-        }
-    }
-
-    function habilitarAlternativas(trueOrFalse) {
-        let opcaoEscolhida = trueOrFalse ? false : true
-
-        primeiraOpcao.disabled = opcaoEscolhida
-        segundaOpcao.disabled = opcaoEscolhida
-        terceiraOpcao.disabled = opcaoEscolhida
-        quartaOpcao.disabled = opcaoEscolhida
-
-    }
-
-    function avancar() {
-        btnProx.disabled = true
-        btnSubmeter.disabled = false
-
-        desmarcarRadioButtons()
-
-        if (numeroDaQuestaoAtual < quantidadeDeQuestoes - 1) {
-            preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
-        } else if (numeroDaQuestaoAtual == quantidadeDeQuestoes - 1) {
-            alert("Atenção... a próxima é a ultima questão!")
-            preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
-        } else {
-            finalizarJogo()
-        }
-        limparCoresBackgroundOpcoes()
-    }
-
-    function tentarNovamente() {
-        // atualiza a página
-        window.location.reload()
-    }
-
-    function checarResposta() {
-        const questaoAtual = listaDeQuestoes[numeroDaQuestaoAtual] // questão atual 
-        const respostaQuestaoAtual = questaoAtual.alternativaCorreta // qual é a resposta correta da questão atual
-
-        const options = document.getElementsByName("option"); // recupera alternativas no html
-
-        let alternativaCorreta = null // variável para armazenar a alternativa correta
-
-        options.forEach((option) => {
-            if (option.value === respostaQuestaoAtual) {
-                console.log("alternativaCorreta está no componente: " + alternativaCorreta)
-                alternativaCorreta = option.labels[0].id
-            }
-        })
-
-        // verifica se resposta assinalada é correta
-        options.forEach((option) => {
-            if (option.checked === true && option.value === respostaQuestaoAtual) {
-                document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
-                pontuacaoFinal++
-                certas++
-                document.getElementById("spanCertas").innerHTML = certas
-                numeroDaQuestaoAtual++
-            } else if (option.checked && option.value !== respostaQuestaoAtual) {
-                const wrongLabelId = option.labels[0].id
-
-                document.getElementById(wrongLabelId).classList.add("text-danger-with-bg")
-                document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
-                tentativaIncorreta++
-                erradas++
-                document.getElementById("spanErradas").innerHTML = erradas
-                numeroDaQuestaoAtual++
-            }
-        })
-    }
-
-    function limparCoresBackgroundOpcoes() {
-        const options = document.getElementsByName("option");
-        options.forEach((option) => {
-            document.getElementById(option.labels[0].id).classList.remove("text-danger-with-bg")
-            document.getElementById(option.labels[0].id).classList.remove("text-success-with-bg")
-        })
-    }
-
-    function desmarcarRadioButtons() {
-        const options = document.getElementsByName("option");
-        for (let i = 0; i < options.length; i++) {
-            options[i].checked = false;
-        }
-    }
-
-    function finalizarJogo() {
-        let textoParaMensagemFinal = null
-        let classComCoresParaMensagemFinal = null
-        const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
-
-        if (porcentagemFinalDeAcertos <= 0.3) {
-            textoParaMensagemFinal = "Parece que você não estudou..."
-            classComCoresParaMensagemFinal = "text-danger-with-bg"
-        }
-        else if (porcentagemFinalDeAcertos > 0.3 && porcentagemFinalDeAcertos < 0.9) {
-            textoParaMensagemFinal = "Pode melhorar na próxima, hein!"
-            classComCoresParaMensagemFinal = "text-warning-with-bg"
-        }
-        else if (porcentagemFinalDeAcertos >= 0.9) {
-            textoParaMensagemFinal = "Uau, parabéns!"
-            classComCoresParaMensagemFinal = "text-success-with-bg"
-        }
-
-        textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos)*100) + "% das questões."
-
-
-        document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
-        document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal) 
-        document.getElementById('spanPontuacaoFinal').innerHTML = pontuacaoFinal
-
-        document.getElementById('jogo').classList.add("text-new-gray") 
-
-        btnProx.disabled = true
-        btnSubmeter.disabled = true
-        // btnConcluir.disabled = true
-        btnTentarNovamente.disabled = false
-
-    }
+// mostra o resultado
+document.getElementById("resposta").style.display = "block";
+}
 </script>
+
+</body>
+</html>

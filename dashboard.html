@@ -6,61 +6,52 @@
     <title>Barcelona</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header class="header">
-    <div class="logo">
-        <h1>Dashboard</h1>
-        <span>Além do que você imagina</span>
-    </div>
 
-    <nav class="menu">
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+    <h2>Barcelona</h2>
+
+    <nav class="menu-lateral">
         <a href="./index.html">Home</a>
         <a href="./dicas.html">Dicas</a>
         <a href="./curiosidades.html">Curiosidades</a>
-        <a>|</a>
-        <a href="./login.html">Login</a>
-        <a href="./cadastro.html">Cadastro</a>
+        <a href="./galeria.html">Galeria</a>
     </nav>
-</header>
+
+    <div class="usuario">
+        <p>Olá, Larissa</p>
+        <button>Sair</button>
+    </div>
+
+</aside>
 
 <!-- DASHBOARD -->
 <section class="dashboard">
-
-    <!-- BANNER -->
-    <!-- <div class="dashboard-banner">
-        <div class="overlay"></div>
-
-        <div class="banner-text">
-            <h1>Dashboard</h1>
-            <p>Dados e informações para sua viagem</p>
-        </div>
-    </div> -->
 
     <!-- KPIs -->
     <div class="kpis">
 
         <div class="kpi azul">
-            <h3>Turistas por ano</h3>
-            <span>12,5M</span>
-            <p>Alta movimentação</p>
-        </div>
-
-        <div class="kpi vermelho">
-            <h3>Temperatura média</h3>
-            <span>23°C</span>
-            <p>No verão</p>
+            <h3>Seu Perfil</h3>
+            <span>Cultural</span>
+            <p>Prefere museus, história e arquitetura</p>
         </div>
 
         <div class="kpi roxo">
-            <h3>Melhor época</h3>
-            <span>Mai - Set</span>
-            <p>Alta temporada</p>
+            <h3>Popularidade do perfil</h3>
+            <span>40%</span>
+            <p>dos participantes fazem parte do turista cultural, como você</p>
         </div>
 
         <div class="kpi laranja">
-            <h3>Avaliação média</h3>
-            <span>4,8/5</span>
-            <p>Baseado em turistas</p>
+            <h3>Total de respostas</h3>
+            <span>150</span>
+            <p>pessoas já responderam até agora</p>
         </div>
 
     </div>
@@ -68,14 +59,16 @@
     <!-- GRÁFICOS -->
     <div class="graficos">
 
+        <!-- GRÁFICO 1 -->
         <div class="grafico">
-            <h3>Visitantes por mês</h3>
-            <canvas id="graficoVisitantes"></canvas>
+            <h3>Tipos de Turistas (%)</h3>
+            <canvas id="graficoTuristas"></canvas>
         </div>
 
+        <!--GRÁFICO 2  -->
         <div class="grafico">
-            <h3>Temperatura ao longo do ano</h3>
-            <canvas id="graficoTemperatura"></canvas>
+            <h3>Porcentagem dos tipos de turista</h3>
+            <canvas id="graficoPerfilTurista"></canvas>
         </div>
 
     </div>
@@ -86,52 +79,61 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-/* GRÁFICO 1 */
-const ctx1 = document.getElementById('graficoVisitantes');
+
+/* GRÁFICO 1 - (PIZZA) */
+const ctx1 = document.getElementById('graficoTuristas');
 
 new Chart(ctx1, {
-    type: 'bar',
+    type: 'pie',
     data: {
-        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+        labels: ['Cultural', 'Gastronômico', 'Espontâneo', 'Aventureiro'],
         datasets: [{
-            label: 'Visitantes (milhões)',
-            data: [3, 5, 7, 8, 10, 12, 13, 14, 11, 8, 5, 3],
-            backgroundColor: '#3aa6b9'
+            data: [40, 30, 20, 10],
+            backgroundColor: ['#2f6f7e', '#a44a4a', '#c58a2b', '#6b5b95']
         }]
     },
     options: {
+        responsive: true,
+        maintainAspectRatio: false,
         plugins: {
-            legend: { display: false }
+            legend: {
+                position: 'right'
+            }
         }
     }
 });
 
-/* GRÁFICO 2 */
-const ctx2 = document.getElementById('graficoTemperatura');
+/* 📊 GRÁFICO 2 - SUA COMPOSIÇÃO DE PERFIL */
+const ctx2 = document.getElementById('graficoPerfilTurista');
 
 new Chart(ctx2, {
-    type: 'line',
+    type: 'bar',
     data: {
-        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+        labels: ['Cultural', 'Gastronômico', 'Espontâneo', 'Aventureiro'],
         datasets: [{
-            label: 'Temperatura',
-            data: [8, 10, 13, 17, 21, 25, 28, 28, 25, 20, 15, 10],
-            borderColor: '#f5a623',
-            fill: false
+            label: 'Percentual do seu perfil',
+            data: [50, 25, 0, 25], 
+            backgroundColor: ['#2f6f7e', '#a44a4a', '#c58a2b', '#6b5b95']
         }]
     },
     options: {
+        responsive: true,
+        maintainAspectRatio: false,
         plugins: {
-            legend: { display: false }
+            legend: {
+                display: false
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 100
+            }
         }
     }
 });
+
 </script>
 
-</body>
-</html>
-
-
-     
 </body>
 </html>

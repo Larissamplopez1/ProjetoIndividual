@@ -1,0 +1,78 @@
+/* Fundo com banner */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+
+  background-image: url('./assets/imgs/banner-barcelona.png'); 
+  min-height: 100vh;
+}
+
+#tituloQuiz {
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+  font-size: 32px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+
+
+/* Container das perguntas */
+#p1, #p2, #p3, #p4, #p5, #p6, #p7, #p8 {
+  width: 40%;
+  margin: 80px auto;
+  padding: 25px;
+
+   background-color: rgba(255, 255, 255, 0.70);
+  border-radius: 8px;
+
+  border-left: 6px solid #c0392b; /* vermelho Barcelona */
+}
+
+/* Pergunta */
+h3 {
+  color: #c0392b;
+  margin-bottom: 20px;
+}
+
+/* Alternativas */
+input[type="radio"] {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* Botão */
+button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover */
+button:hover {
+  background-color: #922b21;
+}
+
+/* Resultado */
+#resposta {
+  width: 40%;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.70);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 6px solid #f1c40f; /* amarelo */
+  line-height: 1.5;
+  justify-content: center;
+}
+
+#imgResultado {
+  width: 300px;       
+  max-height: 400px; 
+  object-fit: cover; 
+  border-radius: 8px;
+}
