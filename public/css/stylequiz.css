@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
 
-  background-image: url('./assets/imgs/banner-barcelona.png'); 
+  background-image: url('../assets/imgs/banner-barcelona.png'); 
   min-height: 100vh;
 }
 

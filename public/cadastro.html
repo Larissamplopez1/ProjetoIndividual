@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barcelona</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -15,12 +15,12 @@
         </div>
 
         <nav class="menu">
-        <a href="./index.html">Home</a>
-        <a href="./dicas.html">Dicas</a>
-        <a href="./curiosidades.html">Curiosidades</a>
-        <a>|</a>
-        <a href="./login.html">Login</a>
-        <a href="./cadastro.html">Cadastro</a>
+            <a href="./index.html">Home</a>
+            <a href="./dicas.html">Dicas</a>
+            <a href="./curiosidades.html">Curiosidades</a>
+            <a>|</a>
+            <a href="./login.html">Login</a>
+            <a href="./cadastro.html">Cadastro</a>
         </nav>
     </header>
     <section class="form-container">
@@ -58,24 +58,6 @@
         let temEspecial = false;
         let especiais = ['!', '@', '#', '$', '%', '&', '*']
 
-    for (let i = 0; i < senha.length; i++) {
-        let posicao = senha[i];
-
-        if (posicao >= 0 && posicao <= 9){
-            temNumero = true;
-        }
-
-        if (especiais.includes(posicao)) {
-        temEspecial = true;
-        }
-    }
-
-    if (!temNumero || !temEspecial) {
-    div_mensagem.innerHTML =
-        `↪ Sua senha deve conter número e caractere especial`;
-    return;
-}
-
 
         if (nome == "" || sobrenome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
             div_mensagem.innerHTML = `⚠️ Preencha todos os campos`
@@ -85,38 +67,61 @@
         if (nome.length <= 1) {
             div_mensagem.innerHTML =
                 `↪ Seu nome deve ter mais que uma letra`
-                return
+            return
         }
 
         if (!email.includes("@") || !email.includes(".com")) {
             div_mensagem.innerHTML =
                 `↪ Deve incluir um e-mail válido`
-                return
+            return
         }
 
         if (senha.length < 8) {
             div_mensagem.innerHTML =
                 `↪ Sua senha deve ter no mínimo 8 caracteres`
-                return
+            return
+        }
+
+
+        for (let i = 0; i < senha.length; i++) {
+            let posicao = senha[i];
+
+            if (posicao >= 0 && posicao <= 9) {
+                temNumero = true;
+            }
+
+            if (especiais.includes(posicao)) {
+                temEspecial = true;
+            }
+        }
+
+        if (!temNumero || !temEspecial) {
+            div_mensagem.innerHTML =
+                `↪ Sua senha deve conter número e caractere especial`;
+            return;
         }
 
         if (senha != confirmacaoSenha) {
             div_mensagem.innerHTML =
                 `↪ Sua senha de confirmação está diferente da senha`
-                return
+            return
         }
 
         if (senha == senhaMinuscula) {
             div_mensagem.innerHTML =
                 `↪ Sua senha deve conter um caractere maiúsculo`
-                return
+            return
         }
 
-        if (senha == confirmacaoSenha && senha.length >= 8 && email.includes("@") && email.includes(".com") && nome.length > 1 && 
-    nome != "" && sobrenome != "" && email != "" && senha != "" && confirmacaoSenha != "" && senha != senhaMinuscula) {
+        if (senha == confirmacaoSenha && senha.length >= 8 && email.includes("@") && email.includes(".com") && nome.length > 1 &&
+            nome != "" && sobrenome != "" && email != "" && senha != "" && confirmacaoSenha != "" && senha != senhaMinuscula) {
             div_mensagem.innerHTML =
                 `Cadastro realizado com sucesso ✅`
-                return
+
+            setTimeout(() => {
+                window.location = "login.html";
+            }, "1000");
+
         }
 
     }

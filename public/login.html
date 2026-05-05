@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barcelona</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="header">
@@ -26,7 +26,7 @@
     <div class="form-box">
         <h2>Login</h2>
 
-        <input type="email" placeholder="Email" id="input_email_login">
+        <input type="email" placeholder="E-mail" id="input_email_login">
         <input type="password" placeholder="Senha" id="input_senha_login">
         
 
@@ -49,7 +49,7 @@
         if (!emailLogin.includes("@") || !emailLogin.includes(".com")) {
             div_mensagem.innerHTML = `⊗ Deve incluir um e-mail válido`
         } else {
-            div_mensagem.innerHTML = `<br>Entrando...`
+            div_mensagem.innerHTML = `<br> Login efetuado com sucesso ✅`
         }
 
 
