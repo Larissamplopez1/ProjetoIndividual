@@ -117,9 +117,13 @@ function irProxima(atual, proxima, nomePergunta) {
 
 function verificarFinal() {
 
-  let A = 0, B = 0, C = 0, D = 0;
+  let cultural = 0;
+  let gastronomico = 0;
+  let espontaneo = 0;
+  let aventureiro = 0;
 
   for (let i = 1; i <= 8; i++) {
+
     let resp = document.querySelector('input[name="p'+i+'"]:checked');
 
     if (!resp) {
@@ -127,49 +131,54 @@ function verificarFinal() {
       return;
     }
 
-    if (resp.value == "A") A++;
-    if (resp.value == "B") B++;
-    if (resp.value == "C") C++;
-    if (resp.value == "D") D++;
+    if (resp.value == "A") cultural++;
+    if (resp.value == "B") gastronomico++;
+    if (resp.value == "C") espontaneo++;
+    if (resp.value == "D") aventureiro++;
   }
 
-let titulo = "";
-let texto = "";
-let imagem = "";
+  let vencedor = "";
+  let texto = "";
+  let imagem = "";
 
-if (B > A && B > C && B > D) {
-  titulo = "Turista Gastronômico";
-  imagem = "./assets/imgs/gastronomico.png";
-  texto = "Para você, viajar é uma experiência de sabores. Descobrir novos restaurantes e pratos faz parte da sua jornada.";
-}
+  if (gastronomico > cultural && gastronomico > espontaneo && gastronomico > aventureiro) {
 
-else if (C > A && C > B && C > D) {
-  titulo = "Turista Espontâneo";
-  imagem = "./assets/imgs/espontaneo.png";
-  texto = "Você prefere viver o momento e deixar a viagem acontecer naturalmente, explorando sem roteiro fixo.";
-}
+    vencedor = "Turista Gastronômico";
+    imagem = "./assets/imgs/gastronomico.png";
+    texto = "Para você, viajar é uma experiência de sabores. Descobrir novos restaurantes e pratos faz parte da sua jornada.";
+  }
 
-else if (D > A && D > B && D > C) {
-  titulo = "Turista Aventureiro";
-  imagem = "./assets/imgs/aventureiro.png";
-  texto = "Você busca experiências diferentes e foge do comum, transformando cada dia em algo único .";
-}
+  else if (espontaneo > cultural && espontaneo > gastronomico && espontaneo > aventureiro) {
 
-else {
-  titulo = "Turista Cultural";
-  imagem = "./assets/imgs/cultural.png";
-  texto = "Você valoriza a história e a cultura local, buscando entender a essência de cada lugar.";
-}
+    vencedor = "Turista Espontâneo";
+    imagem = "./assets/imgs/espontaneo.png";
+    texto = "Você prefere viver o momento e deixar a viagem acontecer naturalmente, explorando sem roteiro fixo.";
+  }
 
-// joga na tela
-document.getElementById("tituloResultado").innerText = titulo;
-document.getElementById("textoResultado").innerText = texto;
-document.getElementById("imgResultado").src = imagem;
-// esconde a ultima pergunta
-document.getElementById("p8").style.display = "none";
+  else if (aventureiro > cultural && aventureiro > gastronomico && aventureiro > espontaneo) {
 
-// mostra o resultado
-document.getElementById("resposta").style.display = "block";
+    vencedor = "Turista Aventureiro";
+    imagem = "./assets/imgs/aventureiro.png";
+    texto = "Você busca experiências diferentes e foge do comum, transformando cada dia em algo único.";
+  }
+
+  else {
+
+    vencedor = "Turista Cultural";
+    imagem = "./assets/imgs/cultural.png";
+    texto = "Você valoriza a história e a cultura local, buscando entender a essência de cada lugar.";
+  }
+
+  // joga na tela
+  document.getElementById("tituloResultado").innerText = vencedor;
+  document.getElementById("textoResultado").innerText = texto;
+  document.getElementById("imgResultado").src = imagem;
+
+  // esconde a última pergunta
+  document.getElementById("p8").style.display = "none";
+
+  // mostra o resultado
+  document.getElementById("resposta").style.display = "block";
 }
 </script>
 

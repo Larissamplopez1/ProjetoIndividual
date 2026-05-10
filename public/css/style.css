@@ -577,7 +577,7 @@ body {
     margin-left: 220px;
     padding: 20px;
     background-image: 
-        linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
+        linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)),
         url('../assets/imgs/banner-barcelona.png');
 
     background-size: cover;
@@ -596,13 +596,13 @@ body {
 .kpis {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
     margin-top: 30px;
     padding: 0 80px;
 }
 
 .kpi {
-    width: 210px;
+    width: 245px;
     padding: 20px;
     border-radius: 15px;
     color: white;
@@ -616,15 +616,15 @@ body {
 
 /* CORES */
 .azul {
-     background-color: #2F6F7E;
+     background-color: #0D2538;
 }
 
 .roxo {
-      background-color: #6B5B95
+      background-color: #0D2538;
 }
 
 .laranja {
-    background-color: #C58A2B;
+    background-color: #0D2538;
 }
 
 /* GRÁFICOS */
@@ -640,7 +640,7 @@ body {
 .grafico {
     width: 420px;
     height: 320px;
-    background: white;
+    background: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
