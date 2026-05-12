@@ -1,186 +1,229 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-<meta charset="UTF-8">
-<title>Quiz</title>
-<link rel="stylesheet" href="css/stylequiz.css">
+  <meta charset="UTF-8">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="css/stylequiz.css">
 </head>
+
 <body>
-<h1 id="tituloQuiz">Descubra qual turista você é</h1>
-<!-- PERGUNTA 1 -->
-<div id="p1">
-  <h3>Ao chegar em uma cidade nova, o que mais chama sua atenção?</h3>
-  <input type="radio" name="p1" value="A"> A arquitetura e os pontos históricos<br>
-  <input type="radio" name="p1" value="B"> Os restaurantes e comidas locais<br>
-  <input type="radio" name="p1" value="C"> O movimento das ruas e o clima do lugar<br>
-  <input type="radio" name="p1" value="D"> As possibilidades de experiências diferentes<br><br>
+  <h1 id="tituloQuiz">Descubra qual turista você é</h1>
+  <!-- PERGUNTA 1 -->
+  <div id="p1">
+    <h3>Ao chegar em uma cidade nova, o que mais chama sua atenção?</h3>
+    <input type="radio" name="p1" value="A"> A arquitetura e os pontos históricos<br>
+    <input type="radio" name="p1" value="B"> Os restaurantes e comidas locais<br>
+    <input type="radio" name="p1" value="C"> O movimento das ruas e o clima do lugar<br>
+    <input type="radio" name="p1" value="D"> As possibilidades de experiências diferentes<br><br>
 
-  <button onclick="irProxima('p1','p2','p1')">Próxima</button>
-</div>
+    <button onclick="irProxima('p1','p2','p1')">Próxima</button>
+  </div>
 
-<!-- PERGUNTA 2 -->
-<div id="p2" style="display:none;">
-  <h3>Qual dessas situações parece mais interessante?</h3>
-  <input type="radio" name="p2" value="A"> Descobrir a história por trás de um lugar<br>
-  <input type="radio" name="p2" value="B"> Experimentar algo típico da culinária local<br>
-  <input type="radio" name="p2" value="C"> Entrar em um lugar que chamou atenção no caminho<br>
-  <input type="radio" name="p2" value="D"> Fazer algo que você nunca fez antes<br><br>
+  <!-- PERGUNTA 2 -->
+  <div id="p2" style="display:none;">
+    <h3>Qual dessas situações parece mais interessante?</h3>
+    <input type="radio" name="p2" value="A"> Descobrir a história por trás de um lugar<br>
+    <input type="radio" name="p2" value="B"> Experimentar algo típico da culinária local<br>
+    <input type="radio" name="p2" value="C"> Entrar em um lugar que chamou atenção no caminho<br>
+    <input type="radio" name="p2" value="D"> Fazer algo que você nunca fez antes<br><br>
 
-  <button onclick="irProxima('p2','p3','p2')">Próxima</button>
-</div>
+    <button onclick="irProxima('p2','p3','p2')">Próxima</button>
+  </div>
 
-<!-- PERGUNTA 3 -->
-<div id="p3" style="display:none;">
-  <h3>Como você costuma organizar seu dia em viagem?</h3>
-  <input type="radio" name="p3" value="A"> Planejo os principais pontos que quero visitar<br>
-  <input type="radio" name="p3" value="B"> Escolho onde vou comer e o resto se encaixa<br>
-  <input type="radio" name="p3" value="C"> Tenho uma ideia geral, mas deixo espaço para decidir na hora<br>
-  <input type="radio" name="p3" value="D"> Procuro atividades diferentes para fazer ao longo do dia<br><br>
+  <!-- PERGUNTA 3 -->
+  <div id="p3" style="display:none;">
+    <h3>Como você costuma organizar seu dia em viagem?</h3>
+    <input type="radio" name="p3" value="A"> Planejo os principais pontos que quero visitar<br>
+    <input type="radio" name="p3" value="B"> Escolho onde vou comer e o resto se encaixa<br>
+    <input type="radio" name="p3" value="C"> Tenho uma ideia geral, mas deixo espaço para decidir na hora<br>
+    <input type="radio" name="p3" value="D"> Procuro atividades diferentes para fazer ao longo do dia<br><br>
 
-  <button onclick="irProxima('p3','p4','p3')">Próxima</button>
-</div>
+    <button onclick="irProxima('p3','p4','p3')">Próxima</button>
+  </div>
 
-<!-- PERGUNTA 4 -->
-<div id="p4" style="display:none;">
-  <h3>O que mais te agrada em um passeio?</h3>
-  <input type="radio" name="p4" value="A"> Aprender algo novo sobre o lugar<br>
-  <input type="radio" name="p4" value="B"> Aproveitar a comida e o ambiente<br>
-  <input type="radio" name="p4" value="C"> A sensação de descobrir algo inesperado<br>
-  <input type="radio" name="p4" value="D"> A emoção de fazer algo fora do comum<br><br>
+  <!-- PERGUNTA 4 -->
+  <div id="p4" style="display:none;">
+    <h3>O que mais te agrada em um passeio?</h3>
+    <input type="radio" name="p4" value="A"> Aprender algo novo sobre o lugar<br>
+    <input type="radio" name="p4" value="B"> Aproveitar a comida e o ambiente<br>
+    <input type="radio" name="p4" value="C"> A sensação de descobrir algo inesperado<br>
+    <input type="radio" name="p4" value="D"> A emoção de fazer algo fora do comum<br><br>
 
-  <button onclick="irProxima('p4','p5','p4')">Próxima</button>
-</div>
+    <button onclick="irProxima('p4','p5','p4')">Próxima</button>
+  </div>
 
-<!-- PERGUNTA 5 -->
-<div id="p5" style="display:none;">
-  <h3>Qual dessas experiências você escolheria?</h3>
-  <input type="radio" name="p5" value="A"> Visitar um museu famoso<br>
-  <input type="radio" name="p5" value="B"> Ir a um mercado gastronômico<br>
-  <input type="radio" name="p5" value="C"> Explorar um bairro sem muita expectativa<br>
-  <input type="radio" name="p5" value="D"> Fazer um passeio diferente pela cidade<br><br>
+  <!-- PERGUNTA 5 -->
+  <div id="p5" style="display:none;">
+    <h3>Qual dessas experiências você escolheria?</h3>
+    <input type="radio" name="p5" value="A"> Visitar um museu famoso<br>
+    <input type="radio" name="p5" value="B"> Ir a um mercado gastronômico<br>
+    <input type="radio" name="p5" value="C"> Explorar um bairro sem muita expectativa<br>
+    <input type="radio" name="p5" value="D"> Fazer um passeio diferente pela cidade<br><br>
 
-  <button onclick="irProxima('p5','p6','p5')">Próxima</button>
-</div>
+    <button onclick="irProxima('p5','p6','p5')">Próxima</button>
+  </div>
 
-<!-- PERGUNTA 6 -->
-<div id="p6" style="display:none;">
-  <h3>O que mais combina com você durante uma viagem?</h3>
-  <input type="radio" name="p6" value="A"> Entender a cultura local<br>
-  <input type="radio" name="p6" value="B"> Aproveitar a culinária<br>
-  <input type="radio" name="p6" value="C"> Curtir o momento sem tanta preocupação<br>
-  <input type="radio" name="p6" value="D"> Buscar novas experiências<br><br>
+  <!-- PERGUNTA 6 -->
+  <div id="p6" style="display:none;">
+    <h3>O que mais combina com você durante uma viagem?</h3>
+    <input type="radio" name="p6" value="A"> Entender a cultura local<br>
+    <input type="radio" name="p6" value="B"> Aproveitar a culinária<br>
+    <input type="radio" name="p6" value="C"> Curtir o momento sem tanta preocupação<br>
+    <input type="radio" name="p6" value="D"> Buscar novas experiências<br><br>
 
-  <button onclick="irProxima('p6','p7','p6')">Próxima</button>
-</div>
+    <button onclick="irProxima('p6','p7','p6')">Próxima</button>
+  </div>
 
-<!-- PERGUNTA 7 -->
-<div id="p7" style="display:none;">
-  <h3>Se você tivesse uma tarde livre, o que faria?</h3>
-  <input type="radio" name="p7" value="A"> Visitava um ponto turístico importante<br>
-  <input type="radio" name="p7" value="B"> Procurava um bom café ou restaurante<br>
-  <input type="radio" name="p7" value="C"> Andava pela cidade e decidia no caminho<br>
-  <input type="radio" name="p7" value="D"> Tentava fazer algo diferente do habitual<br><br>
+  <!-- PERGUNTA 7 -->
+  <div id="p7" style="display:none;">
+    <h3>Se você tivesse uma tarde livre, o que faria?</h3>
+    <input type="radio" name="p7" value="A"> Visitava um ponto turístico importante<br>
+    <input type="radio" name="p7" value="B"> Procurava um bom café ou restaurante<br>
+    <input type="radio" name="p7" value="C"> Andava pela cidade e decidia no caminho<br>
+    <input type="radio" name="p7" value="D"> Tentava fazer algo diferente do habitual<br><br>
 
-  <button onclick="irProxima('p7','p8','p7')">Próxima</button>
-</div>
+    <button onclick="irProxima('p7','p8','p7')">Próxima</button>
+  </div>
 
-<!-- PERGUNTA 8 -->
-<div id="p8" style="display:none;">
-  <h3>O que torna uma viagem inesquecível para você?</h3>
-  <input type="radio" name="p8" value="A"> A história e os lugares visitados<br>
-  <input type="radio" name="p8" value="B"> As comidas que experimentei<br>
-  <input type="radio" name="p8" value="C"> Os momentos inesperados que aconteceram<br>
-  <input type="radio" name="p8" value="D"> As experiências únicas que vivi<br><br>
+  <!-- PERGUNTA 8 -->
+  <div id="p8" style="display:none;">
+    <h3>O que torna uma viagem inesquecível para você?</h3>
+    <input type="radio" name="p8" value="A"> A história e os lugares visitados<br>
+    <input type="radio" name="p8" value="B"> As comidas que experimentei<br>
+    <input type="radio" name="p8" value="C"> Os momentos inesperados que aconteceram<br>
+    <input type="radio" name="p8" value="D"> As experiências únicas que vivi<br><br>
 
-  <button onclick="verificarFinal()">Finalizar</button>
-</div>
+    <button onclick="verificarFinal()">Finalizar</button>
+  </div>
 
-<div id="resposta" style="display:none;">
-  <h2 id="tituloResultado"></h2>
-  <img id="imgResultado">
-  <p id="textoResultado"></p>
-</div>
+  <div id="resposta" style="display:none;">
+    <h2 id="tituloResultado"></h2>
+    <img id="imgResultado">
+    <p id="textoResultado"></p>
+  </div>
 
-<script>
-function irProxima(atual, proxima, nomePergunta) {
+  <script>
+    function irProxima(atual, proxima, nomePergunta) {
 
-  let resposta = document.querySelector('input[name="'+nomePergunta+'"]:checked');
+      let resposta = document.querySelector('input[name="' + nomePergunta + '"]:checked');
 
-  if (!resposta) {
-    alert("Escolha uma opção antes de continuar!");
-    return;
-  }
+      if (!resposta) {
+        alert("Escolha uma opção antes de continuar!");
+        return;
+      }
 
-  document.getElementById(atual).style.display = "none";
-  document.getElementById(proxima).style.display = "block";
-}
-
-function verificarFinal() {
-
-  let cultural = 0;
-  let gastronomico = 0;
-  let espontaneo = 0;
-  let aventureiro = 0;
-
-  for (let i = 1; i <= 8; i++) {
-
-    let resp = document.querySelector('input[name="p'+i+'"]:checked');
-
-    if (!resp) {
-      alert("Responda todas as perguntas!");
-      return;
+      document.getElementById(atual).style.display = "none";
+      document.getElementById(proxima).style.display = "block";
     }
 
-    if (resp.value == "A") cultural++;
-    if (resp.value == "B") gastronomico++;
-    if (resp.value == "C") espontaneo++;
-    if (resp.value == "D") aventureiro++;
-  }
+    function verificarFinal() {
 
-  let vencedor = "";
-  let texto = "";
-  let imagem = "";
+      let cultural = 0;
+      let gastronomico = 0;
+      let espontaneo = 0;
+      let aventureiro = 0;
 
-  if (gastronomico > cultural && gastronomico > espontaneo && gastronomico > aventureiro) {
+      for (let i = 1; i <= 8; i++) {
 
-    vencedor = "Turista Gastronômico";
-    imagem = "./assets/imgs/gastronomico.png";
-    texto = "Para você, viajar é uma experiência de sabores. Descobrir novos restaurantes e pratos faz parte da sua jornada.";
-  }
+        let resp = document.querySelector('input[name="p' + i + '"]:checked');
 
-  else if (espontaneo > cultural && espontaneo > gastronomico && espontaneo > aventureiro) {
+        if (!resp) {
+          alert("Responda todas as perguntas!");
+          return;
+        }
 
-    vencedor = "Turista Espontâneo";
-    imagem = "./assets/imgs/espontaneo.png";
-    texto = "Você prefere viver o momento e deixar a viagem acontecer naturalmente, explorando sem roteiro fixo.";
-  }
+        if (resp.value == "A") cultural++;
+        if (resp.value == "B") gastronomico++;
+        if (resp.value == "C") espontaneo++;
+        if (resp.value == "D") aventureiro++;
+      }
 
-  else if (aventureiro > cultural && aventureiro > gastronomico && aventureiro > espontaneo) {
+      let vencedor = "";
+      let texto = "";
+      let imagem = "";
 
-    vencedor = "Turista Aventureiro";
-    imagem = "./assets/imgs/aventureiro.png";
-    texto = "Você busca experiências diferentes e foge do comum, transformando cada dia em algo único.";
-  }
+      if (gastronomico > cultural && gastronomico > espontaneo && gastronomico > aventureiro) {
 
-  else {
+        vencedor = "Turista Gastronômico";
+        imagem = "./assets/imgs/gastronomico.png";
+        texto = "Para você, viajar é uma experiência de sabores. Descobrir novos restaurantes e pratos faz parte da sua jornada.";
+      }
 
-    vencedor = "Turista Cultural";
-    imagem = "./assets/imgs/cultural.png";
-    texto = "Você valoriza a história e a cultura local, buscando entender a essência de cada lugar.";
-  }
+      else if (espontaneo > cultural && espontaneo > gastronomico && espontaneo > aventureiro) {
 
-  // joga na tela
-  document.getElementById("tituloResultado").innerText = vencedor;
-  document.getElementById("textoResultado").innerText = texto;
-  document.getElementById("imgResultado").src = imagem;
+        vencedor = "Turista Espontâneo";
+        imagem = "./assets/imgs/espontaneo.png";
+        texto = "Você prefere viver o momento e deixar a viagem acontecer naturalmente, explorando sem roteiro fixo.";
+      }
 
-  // esconde a última pergunta
-  document.getElementById("p8").style.display = "none";
+      else if (aventureiro > cultural && aventureiro > gastronomico && aventureiro > espontaneo) {
 
-  // mostra o resultado
-  document.getElementById("resposta").style.display = "block";
-}
-</script>
+        vencedor = "Turista Aventureiro";
+        imagem = "./assets/imgs/aventureiro.png";
+        texto = "Você busca experiências diferentes e foge do comum, transformando cada dia em algo único.";
+      }
+
+      else {
+
+        vencedor = "Turista Cultural";
+        imagem = "./assets/imgs/cultural.png";
+        texto = "Você valoriza a história e a cultura local, buscando entender a essência de cada lugar.";
+      }
+
+      // joga na tela
+      document.getElementById("tituloResultado").innerText = vencedor;
+      document.getElementById("textoResultado").innerText = texto;
+      document.getElementById("imgResultado").src = imagem;
+
+      // esconde a última pergunta
+      document.getElementById("p8").style.display = "none";
+
+      // mostra o resultado
+      document.getElementById("resposta").style.display = "block";
+
+      fetch("/quiz/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          idUsuarioServer: sessionStorage.ID_USUARIO,
+          turistaCulturalServer: cultural,
+          turistaGastronomicoServer: gastronomico,
+          turistaEspontaneoServer: espontaneo,
+          turistaAventureiroServer: aventureiro,
+          turistaVencedorServer: vencedor,
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+
+          if (resposta.ok) {
+            //   cardErro.style.display = "block";
+            //   mensagem_erro.innerHTML =
+            // "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+            // setTimeout(()=> {
+            //    window.location = "./dashboard/dashboard.html";
+            // }, "1000");
+
+           
+
+          } else {
+            throw "Houve um erro ao tentar realizar o quiz";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+
+      return false;
+    }
+
+  </script>
 
 </body>
+
 </html>
